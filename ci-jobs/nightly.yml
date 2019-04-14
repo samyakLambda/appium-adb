@@ -1,6 +1,5 @@
 # https://docs.microsoft.com/azure/devops/pipelines/languages/android
 jobs:
-  # TODO: Add Sauce OnDemand and RDC tests here
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
@@ -10,13 +9,13 @@ jobs:
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
-      name: sdk22_e2e_tests
+      name: sdk27_e2e_tests
       PLATFORM_VERSION: 8.1
       ANDROID_SDK_VERSION: 27
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
-      name: sdk22_e2e_tests
+      name: sdk26_e2e_tests
       PLATFORM_VERSION: 8.0
       ANDROID_SDK_VERSION: 26
   - template: templates/android-e2e-template.yml
@@ -28,13 +27,13 @@ jobs:
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
-      name: sdk22_e2e_tests
+      name: sdk24_e2e_tests
       PLATFORM_VERSION: 7.0
       ANDROID_SDK_VERSION: 24
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
-      name: sdk22_e2e_tests
+      name: sdk23_e2e_tests
       PLATFORM_VERSION: 6.0
       ANDROID_SDK_VERSION: 23
   - template: templates/android-e2e-template.yml
