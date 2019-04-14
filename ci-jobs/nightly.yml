@@ -10,9 +10,33 @@ jobs:
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
+      name: sdk22_e2e_tests
+      PLATFORM_VERSION: 8.1
+      ANDROID_SDK_VERSION: 27
+  - template: templates/android-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
+      name: sdk22_e2e_tests
+      PLATFORM_VERSION: 8.0
+      ANDROID_SDK_VERSION: 26
+  - template: templates/android-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
       name: sdk25_e2e_tests
       PLATFORM_VERSION: 7.1
       ANDROID_SDK_VERSION: 25
+  - template: templates/android-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
+      name: sdk22_e2e_tests
+      PLATFORM_VERSION: 7.0
+      ANDROID_SDK_VERSION: 24
+  - template: templates/android-e2e-template.yml
+    parameters:
+      script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
+      name: sdk22_e2e_tests
+      PLATFORM_VERSION: 6.0
+      ANDROID_SDK_VERSION: 23
   - template: templates/android-e2e-template.yml
     parameters:
       script: npx mocha --timeout 6000000 --reporter mocha-multi-reporters --reporter-options configFile=./ci-jobs/mocha-config.json --recursive build/test/functional/ -g @skip-ci -i --exit
